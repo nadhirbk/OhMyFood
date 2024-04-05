@@ -131,9 +131,9 @@ footer {
   opacity: 0px;
   background-color: rgba(53, 53, 53, 1);
   color: white;
-  .links {
-    text-align: center;
-  }
+}
+.footer_links {
+  text-align: right;
 }
 .fa-solid {
   display: inline-flex;

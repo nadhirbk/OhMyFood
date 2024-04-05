@@ -151,8 +151,9 @@ footer {
   background-color: rgb(53, 53, 53);
   color: white;
 }
-footer .links {
-  text-align: center;
+
+.footer_links {
+  text-align: right;
 }
 
 .fa-solid {
