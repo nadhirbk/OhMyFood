@@ -28,14 +28,34 @@ html {
   font-family: Roboto;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.flexCC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 28px;
-  padding: 30px 180px;
-  max-width: 1440px;
-  margin: 0 auto;
+  gap: 25px;
+  padding: 20px 20px;
+  margin: 0;
+  transition: padding 0.3s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    padding: 20px 100px;
+  }
 }
 
 .logo {
@@ -60,55 +80,66 @@ html {
 .book {
   gap: 30px;
   text-align: center;
-  padding: 30px 97.5px;
+  background: #f6f6f6;
 }
-.book .text_title {
+.book_text_title {
   font-weight: 700;
   font-size: 40px;
 }
-.book .text_desc {
+.book_text_desc {
   font-size: 18px;
   font-weight: 300;
   margin: 18px 0;
 }
 .book_button {
-  width: 218px;
+  max-width: 218px;
+  align-self: center;
+  padding: 13px 18.75px;
   height: 50px;
-  top: 50px;
   border-radius: 25px;
   border: none;
   font-weight: 500;
   font-size: 16px;
   text-align: center;
-  margin-top: 18px;
   background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
   color: white;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
 .steps {
-  display: flex;
   width: 100%;
-  gap: 25px;
+  background: #fff;
 }
 .steps_title {
   font-weight: 700;
   font-size: 24px;
 }
-.steps .step_item {
-  width: 322.49px;
-  height: 72.38px;
-  border-radius: 20px;
-  display: inline-flex;
-  vertical-align: middle;
-  text-align: center;
-  line-height: 72.38px;
-  justify-content: center;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-  margin-right: 24px;
-  background: rgb(246, 246, 246);
+.steps_list {
+  display: grid;
+  gap: 20px 40px;
+  padding-left: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
-
+.steps .step_item {
+  display: flex;
+  height: auto;
+  border-radius: 20px;
+  justify-content: start;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  background: #f6f6f6;
+  padding: 26px 0;
+  gap: 15px;
+}
+.steps .step_item_number {
+  background: #c580f0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transform: translateX(-16px);
+}
+.restaurants {
+  background: #f6f6f6;
+}
 .restaurants .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -116,35 +147,37 @@ html {
   border-radius: 15px;
 }
 .restaurants .cards .card {
-  width: 490px;
-  height: 251px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
 }
 .restaurants .cards .card_img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  display: block;
-  border-radius: 15px 15px 0 0;
 }
-.restaurants .cards .card_text {
-  padding: 16px 90.69px 14px 18.74px;
-  height: 77px;
-  border-radius: 0 0 15px 15px;
+.restaurants .cards .card_content {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 14px;
 }
-.restaurants .cards .card_titles {
-  font-weight: 700;
+.restaurants .cards .card_title {
   font-size: 18px;
-  line-height: 21.09px;
+  font-weight: 700;
 }
 .restaurants .cards .card_desc {
   font-weight: 300;
   font-size: 17px;
-  line-height: 19.92px;
+}
+.restaurants .cards .card_like {
+  display: flex;
+  align-items: center;
+  justify-self: center;
 }
 
 footer {
-  width: Fixed 1, 440px px;
-  height: Fixed 114px px;
+  width: Fixed 375px;
+  height: Fixed 186px;
   padding: 30px 25px 30px 25px;
   gap: 16px;
   opacity: 0px;
@@ -152,8 +185,13 @@ footer {
   color: white;
 }
 
-.footer_links {
-  text-align: right;
+.footer_logo {
+  width: 139px;
+  height: 27px;
+  padding: 0px 1.42px 0px 0px;
+  gap: 10px;
+  opacity: 0px;
+  color: white;
 }
 
 .fa-solid {
