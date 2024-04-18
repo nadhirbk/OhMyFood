@@ -156,7 +156,8 @@ main {
 .restaurants .cards .card_img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .restaurants .cards .card_content {
   display: flex;
@@ -215,7 +216,8 @@ footer {
   font-family: Shrikhand;
   font-size: 1.15rem;
   font-weight: 400;
-  text-decoration: italic;
+  -webkit-text-decoration: italic;
+          text-decoration: italic;
 }
 
 .fa-solid {
@@ -232,6 +234,4 @@ footer {
 }
 .footer_link .fa-solid {
   width: 12px;
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
