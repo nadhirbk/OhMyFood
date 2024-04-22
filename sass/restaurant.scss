@@ -77,9 +77,29 @@ main {
   height: 70px;
   border-radius: 15px;
   margin-bottom: 12px;
-  padding: 13.5px 47px 13.5px 15px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: start;
+  align-items: end;
+  overflow: hidden;
+  position: relative;
+  &-text {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    width: calc(100% - 70px);
+    transition: width 0.5s ease-in-out;
+    & * {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  &:hover > &-text {
+    width: calc(100% - 130px);
+  }
   &_category {
     font-size: 16px;
     font-weight: 300;
@@ -99,9 +119,36 @@ main {
     text-align: right;
     font-size: 15px;
     font-weight: 700;
+    padding: 15px;
+    width: 70px;
   }
   &_desc {
     font-size: 15px;
     font-weight: 300;
+  }
+  & .marque {
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    transform: translateX(60px);
+    transition: transform 0.5s ease-in-out;
+    color: #99e2d0;
+    background-color: #99e2d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & .fa-check {
+      background-color: white;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  }
+  &:hover > .marque {
+    transform: translateX(0px);
   }
 }

@@ -154,9 +154,29 @@ main {
   height: 70px;
   border-radius: 15px;
   margin-bottom: 12px;
-  padding: 13.5px 47px 13.5px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: end;
+  overflow: hidden;
+  position: relative;
+}
+.rest_item-text {
+  padding: 15px;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  width: calc(100% - 70px);
+  transition: width 0.5s ease-in-out;
+}
+.rest_item-text * {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.rest_item:hover > .rest_item-text {
+  width: calc(100% - 130px);
 }
 .rest_item_category {
   font-size: 16px;
@@ -177,10 +197,37 @@ main {
   text-align: right;
   font-size: 15px;
   font-weight: 700;
+  padding: 15px;
+  width: 70px;
 }
 .rest_item_desc {
   font-size: 15px;
   font-weight: 300;
+}
+.rest_item .marque {
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  transform: translateX(60px);
+  transition: transform 0.5s ease-in-out;
+  color: #99e2d0;
+  background-color: #99e2d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rest_item .marque .fa-check {
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.rest_item:hover > .marque {
+  transform: translateX(0px);
 }
 
 /*# sourceMappingURL=restaurant.css.map */
