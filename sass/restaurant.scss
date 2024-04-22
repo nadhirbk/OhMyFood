@@ -1,4 +1,7 @@
 @import "./base/typography";
+@import "./base/variables";
+@import "./components/button";
+@import "./layouts/footer";
 * {
   margin: 0px;
   padding: 0px;
@@ -11,6 +14,7 @@ html {
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   gap: 30px;
   max-width: 1440px;
@@ -18,10 +22,16 @@ main {
 }
 .rest_title {
   font-family: Shrikhand;
+  font-size: 28px;
+  align-self: start;
+  @media (min-width: 768px) {
+    align-self: center;
+  }
 }
 .rest_img {
   width: 100%;
   height: 275px;
+  object-fit: cover;
 }
 .logo {
   display: block;
@@ -31,20 +41,35 @@ main {
   height: 34.2px;
   margin: 30px auto 30px auto;
 }
-.loc {
-  background-color: #eaeaea;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 45px;
-  position: relative;
-  gap: 17px;
-  height: 50px;
-}
 .menu {
-  border-radius: 15px 15px 0 0;
-  border: red solid 3px;
-  background-color: #F6F6F6;
-  gap: 40px;
+  background-color: $bg-color;
+  display: flex;
+  justify-content: center;
+  padding: 0px 13px 13px 13px;
+  position: relative;
+  width: 100%;
+  max-width: 1055px;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 30px;
+    top: -30px;
+    left: 0;
+    background: $bg-color;
+    position: absolute;
+    border-radius: 30px 30px 0 0;
+  }
+  .wrapper {
+    width: 100%;
+    gap: 40px;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .category {
+    width: 100%;
+  }
 }
 .rest_item {
   background-color: white;
@@ -55,31 +80,28 @@ main {
   padding: 13.5px 47px 13.5px 15px;
   display: flex;
   flex-direction: column;
-  &_category{
-font-size: 16px;
-font-weight: 300;
-margin-bottom: 12px;
+  &_category {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    position: relative;
+    &::after {
+      content: "";
+      width: 40px;
+      height: 3px;
+      background: #99e2d0;
+      left: 0;
+      bottom: -5px;
+      position: absolute;
+    }
   }
-  &_desc{
+  & .prix {
+    text-align: right;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  &_desc {
     font-size: 15px;
     font-weight: 300;
   }
-}
-.prix {
-  text-align: right;
-  font-size: 15px;
-  font-weight: 700;
-}
-.button_order{
-  max-width: 186px;
-  padding: 13px 18.75px;
-  height: 50px;
-  border-radius: 25px;
-  border: none;
-  font-weight: 500;
-  font-size: 16px;
-  text-align: center;
-  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
-  color: white;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
